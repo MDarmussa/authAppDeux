@@ -5,6 +5,7 @@ require('dotenv').config()
 
 const isValidToken = (req, res, next) => {
      const token = req.cookies["token"]
+     console.log('This is token: ', token )
 
      if(token) {
        jwt.verify(
@@ -13,11 +14,11 @@ const isValidToken = (req, res, next) => {
          function(err, decoded) {
            if(decoded) {
              console.log('This is my payload with my token', decoded)
-          //    res.json(decoded)
+            //  res.json(decoded) / payload means json
              next()
            } else {
              res.redirect('/error')
-             // error is the error.ejs
+            //  error is the error.ejs
            }
          }
        ) 

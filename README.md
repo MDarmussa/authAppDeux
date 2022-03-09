@@ -8,29 +8,29 @@ By Mohammad Darmussa / March 5/2022
 
 \* ----------------  Setup  ----------- */
 
-- run: npx express-generator --ejs --git authAppDeux
+1- run: npx express-generator --ejs --git authAppDeux  (bin / public / routes / views / .gitignore / app.js / package.json)
  click yes
 
-- run npm install //that install dependencies for json
+2- run: npm install //that install dependencies for json (node_modules)
 
-- run: npm i pg sequelize bcrypt jsonwebtoken dotenv
+3- run: npm i pg sequelize bcrypt jsonwebtoken dotenv (package.json: pg / sequelize / bcrypt / jsonwebtoken / dotenv)
 
-- on bin/www change the port and the console //optional (change from 3000 to ${anything like 3333}
-- on package.json, add script for "dev": "nodemon ./bin/www" / optional // script for running our project. our running command becomes (npm run dev)
-- create instance in elephantsql.com
-- run: npx sequelize-cli init //create models/migration/seeders
-- on config /  config.json , add 
+4- on bin/www change the port and the console //optional (change from 3000 to ${anything like 3333}
+5- on package.json, add script for "dev": "nodemon ./bin/www" / optional // script for running our project. our running command becomes (npm run dev)
+6- create instance in elephantsql.com
+7- run: npx sequelize-cli init //create models/migration/seeders
+8- on config/config.json , add 
      "username": "icirksed",
     "password": "bt43cc8j1db8fG2WvhUvIUBdFYWuMYqO",
      "host": "hansken.db.elephantsql.com",
      "dialect": "postgres"
    note:  we get (username, password, host) from our instance in elephantsql.com
-- create a new favorite on postico, then copy the url in URL from elephantSQL, add the host on postico and nickname. usually it will show up automatically because we coppied the URL from elephantsql.com
+9- create a new favorite on postico, then copy the url in URL from elephantSQL, add the host on postico and nickname. usually it will show up automatically because we coppied the URL from elephantsql.com
 
-- run: npx sequelize-cli model:generate --name User --attributes "username:string, password:string, email:string"
-- run:npx sequelize-cli db:migrate //migrate our model to our database
+10- run: npx sequelize-cli model:generate --name User --attributes "username:string, password:string, email:string"
+11- run: npx sequelize-cli db:migrate //migrate our model to our database
 
-- create the route and the setting in user.js
+12- create the route and the setting in route/user.js
      const bcrypt = require('bcrypt');
      require('dotenv').config()
      const saltRounds = bcrypt.genSaltSync(Number(process.env.SALT_FACTOR)) // process.env.SALT_FACTOR this will read the valuable in .env
@@ -88,3 +88,8 @@ By Mohammad Darmussa / March 5/2022
  
  - https://digitalcrafts.instructure.com/courses/172/pages/reading-sequelize-orm?module_item_id=12056
  - https://www.elephantsql.com/
+
+
+
+
+<!-- run: npx sequelize-cli model:generate --name userData --attributes "type:string, item:string, date:integer, amount:string, note:string" -->

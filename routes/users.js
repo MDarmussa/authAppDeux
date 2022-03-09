@@ -1,4 +1,4 @@
-var express = require('express');
+var express = require('express'); //import express library
 var router = express.Router();
 const bcrypt = require('bcrypt');
 require('dotenv').config()
