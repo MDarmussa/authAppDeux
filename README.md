@@ -4,7 +4,7 @@ By Mohammad Darmussa / March 5/2022
 - Sequelize ORM / create our database
 - Express (create routes)
 - create views and connecting our ejs templates to the routes
-- create authentican security and tracking cookies
+- create authentican security and tracking cookies (jwt)
 
 \* ----------------  Setup  ----------- */
 
@@ -82,6 +82,16 @@ By Mohammad Darmussa / March 5/2022
      - add params for the is in line 26 / index.js
      - render the name in line 33 / index.js
      - redirect the user.id  for the profile in line 55/users.js
+
+
+
+\* ----------------  NodeJs - Axios (API)  ----------- */
+
+Using npm:
+- run: npm install axios
+- require: const axios = require('axios');
+
+
 
 
 \* ----------------  links used  ----------- */
